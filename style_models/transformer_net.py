@@ -79,8 +79,6 @@ class ConvLayer(nn.Module):
 
 class ResidualBlock(nn.Module):
     """ResidualBlock
-    introduced in: https://arxiv.org/abs/1512.03385
-    recommended architecture: http://torch.ch/blog/2016/02/04/resnets.html
     """
 
     def __init__(self, channels: int):
@@ -106,10 +104,8 @@ class ResidualBlock(nn.Module):
 
 class UpsampleConvLayer(nn.Module):
     """UpsampleConvLayer
-    Upsamples the input and then does a convolution. This method gives better results
-    compared to ConvTranspose2d.
-    ref: http://distill.pub/2016/deconv-checkerboard/
-    """
+    Upsamples the input and then does a convolution.
+        """
 
     def __init__(
             self,

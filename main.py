@@ -34,7 +34,7 @@ def index() -> Response:
 def stylize() -> Response:
     """
     Data stylization route
-    :return: stylized image bytes as response
+    :return: stylized image
     """
     style = request.values["style"]
     content = request.values["content"]
