@@ -1,4 +1,9 @@
 pandas
 seaborn
 matplotlib
+Flask==1.1.2
+Pillow==8.0.1
+torch==1.7.1
+torchvision==0.8.2
+
 -e .
