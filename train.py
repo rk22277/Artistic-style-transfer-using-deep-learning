@@ -22,10 +22,10 @@ os.makedirs("style", exist_ok=True)
 os.makedirs("weights", exist_ok=True)
 
 
-TRAIN_FLDR = "/Users/rk/Documents/DeepLearning/project/stylizeGAN/style-transfer-GAN/train_imgs"
-SAMPLE_FLDR = "/Users/rk/Documents/DeepLearning/project/stylizeGAN/style-transfer-GAN/result_imgs"
-STYLE_IMG = "/Users/rk/Documents/DeepLearning/project/stylizeGAN/style-transfer-GAN/static/icons/tree.jpg"
-STYLE_MODEL = "/Users/rk/Documents/DeepLearning/project/stylizeGAN/style-transfer-GAN/weights/tree2.pth"
+TRAIN_FLDR = "/Users/rk/Documents/DeepLearning/data255_dl/train_imgs"
+SAMPLE_FLDR = "/Users/rk/Documents/DeepLearning/data255_dl/result_imgs"
+STYLE_IMG = "/Users/rk/Documents/DeepLearning/data255_dl/static/icons/tree.jpg"
+STYLE_MODEL = "/Users/rk/Documents/DeepLearning/data255_dl/styles/tree.pth"
 
 
 os.makedirs(SAMPLE_FLDR, exist_ok=True)
@@ -179,8 +179,6 @@ class ConvLayer(nn.Module):
 
 class ResidualBlock(nn.Module):
     """ResidualBlock
-    introduced in: https://arxiv.org/abs/1512.03385
-    recommended architecture: http://torch.ch/blog/2016/02/04/resnets.html
     """
 
     def __init__(self, channels):
@@ -201,9 +199,7 @@ class ResidualBlock(nn.Module):
 
 class UpsampleConvLayer(nn.Module):
     """UpsampleConvLayer
-    Upsamples the input and then does a convolution. This method gives better results
-    compared to ConvTranspose2d.
-    ref: http://distill.pub/2016/deconv-checkerboard/
+    Upsamples the input and then does a convolution.x
     """
 
     def __init__(self, in_channels, out_channels, kernel_size, stride, upsample=None):
